@@ -33,18 +33,15 @@ bot.onText(/\/predict/, (msg) => {
 bot.on('message', (msg) => {
     if(state == 1){
         s = msg.text.split("|");
-        i = s[0]
-        r = s[1]
         model.predict(
             [
                 parseFloat(s[0]), // string to float
                 parseFloat(s[1])
             ]
         ).then((jres)=>{
-            v = parseFloat(jres[0])
-            p = parseFloat(jres[1])
+            console.log(jres1);
             
-            cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), p, v]).then((jres2) =>{
+            cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), parseFloat(jres1[0]), parseFloat(jres1[1])]).then((jres2) =>{
                 bot.sendMessage(
                     msg.chat.id,
                     `Nilai v yang diprediksi adalah ${jres[0]} volt`
