@@ -89,7 +89,7 @@ r.get('/classify/:i/:r', function(req, res, next) {
                 parseFloat(jres[1])
                ]
                ).then((jres_)=>{
-                res.json(jres_)
+                res.json(jres, jres_)
            })
       })
 });
