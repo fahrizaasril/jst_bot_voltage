@@ -10,7 +10,6 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '1659364972:AAFRXlLjVN-HcgQfce1WZiQNC6J5rJmf7OI'
 const bot = new TelegramBot(token, {polling: true});
 
-
 // bots
 bot.onText(/\/start/, (msg) => { 
     console.log(msg)
@@ -20,7 +19,6 @@ bot.onText(/\/start/, (msg) => {
         click  /predict`
     );   
 });
-
 
 
 state = 0;
